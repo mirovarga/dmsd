@@ -10,7 +10,7 @@ type UntagCommand struct {
 	Glob        string   `arg:"positional" help:"include files matching the glob [default: **]" default:"**"`
 	ExcludeGlob string   `arg:"--exclude,-E" help:"exclude files matching the glob" placeholder:"GLOB"`
 	Tags        lib.Tags `arg:"--tag,-t,separate" help:"remove the tag in the format name[:value]" placeholder:"TAG"`
-	AutoTags    bool     `arg:"--auto-tags,-A" help:"remove tags derived from the filesystem"`
+	AutoTags    bool     `arg:"--auto-tags,-A" help:"remove tags derived from the file system"`
 	DryRun      bool     `arg:"--dry-run,-D" help:"don't make any changes"`
 	Verbose     bool     `arg:"-v" help:"show as much info as available"`
 }
