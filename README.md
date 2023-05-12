@@ -45,7 +45,8 @@ all data about the tagged files is stored in the data file.
 > **TL;DR:** To tag files, use the `tag` command (run `./dmsd tag -h` for help).
 
 Tagging is attaching a label or a label with value to a file, like `invoice`
-(a label) or `due:tomorrow` (a label with value).
+(a label) or `due:tomorrow` (a label with value - the `:` separates the label
+from its value).
 
 Tags can be attached to multiple files and each file can have multiple tags.
 
@@ -180,7 +181,7 @@ $ ./dmsd untag --auto-tags --exclude '**/*.md'
 ### Using multiple data files
 
 By default, information about tagged files is stored in the `./dmsd.db` file.
-You can override where the info is stored (or read from) by specifying the
+You can override where the information is stored (or read from) by specifying the
 `--data-file` option, like this:
 
 ```
