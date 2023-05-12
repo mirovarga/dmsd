@@ -33,11 +33,11 @@ all data about the tagged files is stored in the data file.
 2. `cd` to the directory
 3. Tag all files in the current directory (with tags derived from the file system):
    ```
-   $ ./dmsd tag -A
+   ./dmsd tag -A
    ```
 4. List the tagged files:
    ```
-   $ ./dmsd list
+   ./dmsd list
    ```
 
 ## Documentation
@@ -76,27 +76,27 @@ The tags can then be used to list files that match certain criteria.
 Tag all files in the current directory with tags derived from the file system,
 like file name, extension, etc.:
 ```
-$ dmsd tag --auto-tags
+dmsd tag --auto-tags
 ```
 
 Tag all files in the current directory with the `a-tag` tag:
 ```
-$ dmsd tag --tag a-tag
+dmsd tag --tag a-tag
 ```
 
 Tag all files in the current directory with tags `tag-one` and `tag:two`
 (the `:` separates the tag name from its value):
 ```
-$ dmsd tag --tag tag-one --tag tag:two
+dmsd tag --tag tag-one --tag tag:two
 ```
 > You can combine tags derived from the file system with custom tags like this:
 >
-> `$ dmsd tag --auto-tags -t a-tag`
+> `dmsd tag --auto-tags -t a-tag`
 
 Tag all Markdown files in the current directory with tags derived from the file
 system:
 ```
-$ dmsd tag '*.md' --auto-tags
+dmsd tag '*.md' --auto-tags
 ```
 > Note the single quotes - we need them to prevent the shell from interpreting
 > the glob pattern and thus matching different files than expected.
@@ -104,7 +104,7 @@ $ dmsd tag '*.md' --auto-tags
 Tag all files except Markdown ones in the current directory with tags derived
 from the file system:
 ```
-$ dmsd tag --auto-tags --exclude '*.md'
+dmsd tag --auto-tags --exclude '*.md'
 ```
 
 ### Listing files
@@ -119,30 +119,30 @@ $ dmsd tag --auto-tags --exclude '*.md'
 
 List all files:
 ```
-$ dmsd list
+dmsd list
 ```
 
 List all Markdown files:
 ```
-$ dmsd list '**/*.md'
+dmsd list '**/*.md'
 ```
 > Note the double asterisk - we need it because files are indexed by their full
 > paths so `*.md` wouldn't work as expected.
 
 List all files except Markdown ones:
 ```
-$ dmsd list --exclude '**/*.md'
+dmsd list --exclude '**/*.md'
 ```
 
 List all files with the `a-tag` tag:
 ```
-$ dmsd list -t a-tag
+dmsd list -t a-tag
 ```
 
 List all files with tags `tag-one` and `tag:two` (the `:` separates the tag name
 from its value):
 ```
-$ dmsd list -t tag-one -t tag:two
+dmsd list -t tag-one -t tag:two
 ```
 
 ### Untagging files
@@ -162,33 +162,33 @@ Untagging removes tags from already tagged files.
 
 Remove tags derived from the file system from all files:
 ```
-$ dmsd untag --auto-tags
+dmsd untag --auto-tags
 ```
 
 Remove the `a-tag` tag from all files:
 ```
-$ dmsd untag --tag a-tag
+dmsd untag --tag a-tag
 ```
 
 Remove tags `tag-one` and `tag:two` from all files (the `:` separates the tag
 name from its value):
 ```
-$ dmsd untag --tag tag-one --tag tag:two
+dmsd untag --tag tag-one --tag tag:two
 ```
 > You can combine tags derived from the file system with custom tags like this:
 >
-> `$ dmsd untag --auto-tags -t a-tag`
+> `dmsd untag --auto-tags -t a-tag`
 
 Remove tags derived from the file system from all Markdown files:
 ```
-$ dmsd untag '**/*.md' --auto-tags
+dmsd untag '**/*.md' --auto-tags
 ```
 > Note the double asterisk - we need it because files are indexed by their full
 > paths so `*.md` wouldn't work as expected.
 
 Remove tags derived from the file system from all files except Markdown ones:
 ```
-$ dmsd untag --auto-tags --exclude '**/*.md'
+dmsd untag --auto-tags --exclude '**/*.md'
 ```
 
 ### Using multiple data files
@@ -198,5 +198,5 @@ the current directory. You can override where the information is stored (or read
 from) by specifying the `--data-file` option, like this:
 
 ```
-$ dmsd --data-file overriden.db tag --auto-tags
+dmsd --data-file overriden.db tag --auto-tags
 ```
