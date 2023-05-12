@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-const defaultDBFile = "dmsd.data"
+const defaultDataFile = "dmsd.db"
 
 type DB struct {
 	file string
@@ -57,7 +57,7 @@ func NewDB(file string) DB {
 }
 
 func NewDefaultDB() DB {
-	return NewDB(defaultDBFile)
+	return NewDB(defaultDataFile)
 }
 
 func NewOrDefaultDB(file string) DB {

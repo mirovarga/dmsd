@@ -1,3 +1,5 @@
+// TODO godoc
+
 package cli
 
 import (
@@ -10,14 +12,14 @@ import (
 )
 
 type args struct {
-	DBFile string        `arg:"-F" default:"dmsd.db" help:"data file" placeholder:"FILE"`
-	Tag    *TagCommand   `arg:"subcommand:tag" help:"tag files"`
-	List   *ListCommand  `arg:"subcommand:list" help:"show tagged files"`
-	Untag  *UntagCommand `arg:"subcommand:untag" help:"untag files"`
+	DataFile string        `arg:"--data-file,-F" default:"dmsd.db" help:"data file" placeholder:"FILE"`
+	Tag      *TagCommand   `arg:"subcommand:tag" help:"tag files"`
+	List     *ListCommand  `arg:"subcommand:list" help:"list tagged files"`
+	Untag    *UntagCommand `arg:"subcommand:untag" help:"untag files"`
 }
 
-func (args) Description() string {
-	return "DMSd: Turn files matching a glob into a DMS (docs: github.com/mirovarga/dmsd)\n"
+func (args) Version() string {
+	return "DMSd (v0.1.1): Turn files matching a glob into a DMS (docs: github.com/mirovarga/dmsd)\n"
 }
 
 type Command interface {
@@ -31,8 +33,8 @@ func Run() {
 	var cmd Command
 	switch {
 	case args.Tag != nil:
-		if args.Tag.Tags == nil && !args.Tag.AutoTag {
-			parser.Fail("--tag, --auto-tag or both required")
+		if args.Tag.Tags == nil && !args.Tag.AutoTags {
+			parser.Fail("--tag, --auto-tags or both required")
 		}
 		cmd = args.Tag
 	case args.Untag != nil:
@@ -46,7 +48,7 @@ func Run() {
 		return
 	}
 
-	err := cmd.Run(lib.NewOrDefaultDB(args.DBFile))
+	err := cmd.Run(lib.NewOrDefaultDB(args.DataFile))
 	if err != nil {
 		fmt.Printf("ERROR: %s\n", err)
 	}
