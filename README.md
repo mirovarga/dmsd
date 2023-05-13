@@ -5,18 +5,6 @@ Turn files matching a glob into a DMS.
 > **NB:** This project is a (working) prototype to see if it can be useful at
 > all.
 
-* [Overview](#overview)
-* [Quick start](#quick-start)
-* [Documentation](#documentation)
-  * [Installation](#installation)
-  * [Tagging files](#tagging-files)
-    * [Examples](#examples)
-  * [Listing files](#listing-files)
-    * [Examples](#examples-1)
-  * [Untagging files](#untagging-files)
-    * [Examples](#examples-2)
-  * [Using multiple data files](#using-multiple-data-files)
-
 ## Overview
 
 DMSd is a command line tool that allows to tag files matching
