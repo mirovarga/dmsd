@@ -21,7 +21,7 @@ Turn files matching a glob into a DMS.
 
 DMSd is a command line tool that allows to tag files matching
 a [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
-The tags can then be used to list files that match certain criteria.
+The tags can then be used to list files that match certain tags.
 
 It makes no changes to the files themselves, doesn't copy, move or rename them -
 all data about the tagged files is stored in the data file.
@@ -63,7 +63,7 @@ from its value).
 
 Tags can be attached to multiple files and each file can have multiple tags.
 
-The tags can then be used to list files that match certain criteria.
+The tags can then be used to list files that match certain tags.
 
 > Tagging a file makes no changes to the file itself, doesn't copy, move or
 > rename it - all data about the tagged files is stored in the data file.
@@ -91,7 +91,7 @@ dmsd tag --tag tag-one --tag tag:two
 ```
 > You can combine tags derived from the file system with custom tags like this:
 >
-> `dmsd tag --auto-tags -t a-tag`
+> `dmsd tag --auto-tags --tag a-tag`
 
 Tag all Markdown files in the current directory with tags derived from the file
 system:
@@ -115,34 +115,22 @@ dmsd tag --auto-tags --exclude '*.md'
 #### Examples
 
 > Use the `--format` option in all examples below to change the listing format.
-> Supported formats are `table` (default), `card` and `json`.
+> Supported formats are `text` (default) and `json`.
 
 List all files:
 ```
 dmsd list
 ```
 
-List all Markdown files:
-```
-dmsd list '**/*.md'
-```
-> Note the double asterisk - we need it because files are indexed by their full
-> paths so `*.md` wouldn't work as expected.
-
-List all files except Markdown ones:
-```
-dmsd list --exclude '**/*.md'
-```
-
 List all files with the `a-tag` tag:
 ```
-dmsd list -t a-tag
+dmsd list a-tag
 ```
 
 List all files with tags `tag-one` and `tag:two` (the `:` separates the tag name
 from its value):
 ```
-dmsd list -t tag-one -t tag:two
+dmsd list tag-one tag:two
 ```
 
 ### Untagging files
@@ -177,7 +165,7 @@ dmsd untag --tag tag-one --tag tag:two
 ```
 > You can combine tags derived from the file system with custom tags like this:
 >
-> `dmsd untag --auto-tags -t a-tag`
+> `dmsd untag --auto-tags --tag a-tag`
 
 Remove tags derived from the file system from all Markdown files:
 ```
