@@ -12,7 +12,7 @@ a [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
 The tags can then be used to list files that match certain tags.
 
 It makes no changes to the files themselves, doesn't copy, move or rename them -
-all data about the tagged files is stored in the data file.
+all data about the tagged files is stored in a data file.
 
 ## Quick start
 
