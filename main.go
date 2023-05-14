@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/mirovarga/dmsd/cli"
-)
+import "github.com/mirovarga/dmsd/cli"
 
 func main() {
 	cli.Run()

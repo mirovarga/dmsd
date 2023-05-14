@@ -29,7 +29,7 @@ func (cmd ListCommand) Run(db lib.DB) error {
 	switch cmd.Format {
 	case "text":
 		if len(items) == 0 {
-			fmt.Printf("No matching files found\n")
+			fmt.Println("No matching files found")
 			return nil
 		}
 

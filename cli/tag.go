@@ -38,7 +38,7 @@ func (cmd TagCommand) Run(db lib.DB) error {
 		if cmd.Verbose {
 			printFullPaths(items)
 		} else {
-			fmt.Printf("Hint: Use --verbose to list the files\n")
+			fmt.Println("Hint: Use --verbose to list the files")
 		}
 		return nil
 	}

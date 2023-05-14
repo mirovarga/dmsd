@@ -48,12 +48,12 @@ func Run() {
 
 	err := cmd.Run(lib.NewOrDefaultDB(args.DataFile))
 	if err != nil {
-		fmt.Printf("ERROR: %s\n", err)
+		fmt.Println("ERROR: ", err)
 	}
 }
 
 func printFullPaths(items lib.Items) {
 	for _, i := range items {
-		fmt.Printf("%s\n", i.FullPath)
+		fmt.Println(i.FullPath)
 	}
 }
