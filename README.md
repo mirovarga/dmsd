@@ -1,15 +1,49 @@
 # DMSd
 
-Turn files matching a glob into a DMS.
+A command line tool for tagging files and querying for files with those tags.
 
 > **NB:** This project is a (working) prototype to see if it can be useful at
 > all.
 
+## Table of contents
+
+* [What about the name?](#what-about-the-name)
+* [Overview](#overview)
+* [Quick start](#quick-start)
+* [Documentation](#documentation)
+  * [Installation](#installation)
+  * [Tagging files](#tagging-files)
+    * [Examples](#examples)
+  * [Listing files](#listing-files)
+    * [Examples](#examples-1)
+  * [Untagging files](#untagging-files)
+    * [Examples](#examples-2)
+  * [Using multiple data files](#using-multiple-data-files)
+
+## What about the name?
+
+`DMS` stands for
+[Document Management System](https://en.wikipedia.org/wiki/Document_management_system),
+`d` for directory.
+
+The tool was originally meant to create a DMS from files in a directory, but 
+now it actually uses [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming))
+to specify the files to work on.
+ 
+Also, after feedback from
+[Reddit](https://www.reddit.com/r/golang/comments/13hqp3f/comment/jk7e65l)
+and [HN](https://news.ycombinator.com/item?id=35944339), it seems that it's not
+a DMS, but rather a file tagging system.
+
+Currently, I don't have a better name for it, so it remains DMSd :)
+
 ## Overview
 
-DMSd is a command line tool that allows to tag files matching
-a [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
-The tags can then be used to list files that match certain tags.
+DMSd is a command line tool for tagging files and querying for files with those
+tags.
+
+It uses [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming))
+to match the files to tag.
 
 It makes no changes to the files themselves, doesn't copy, move or rename them -
 all data about the tagged files is stored in a data file.
@@ -21,7 +55,7 @@ all data about the tagged files is stored in a data file.
 2. `cd` to the directory
 3. Tag all files in the current directory (with tags derived from the file system):
    ```
-   ./dmsd tag -A
+   ./dmsd tag --auto-tags
    ```
 4. List the tagged files:
    ```
