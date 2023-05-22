@@ -17,7 +17,7 @@ type args struct {
 }
 
 func (args) Version() string {
-	return "DMSd (v0.3.0): Turn files matching a glob into a DMS (docs: github.com/mirovarga/dmsd)\n"
+	return "DMSd (v0.3.1): A tool for tagging files and querying for files with those tags [github.com/mirovarga/dmsd]\n"
 }
 
 type Command interface {
