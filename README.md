@@ -7,7 +7,7 @@ A command line tool for tagging files and querying for files with those tags.
 
 ## Table of contents
 
-* [What about the name?](#what-about-the-name)
+* [About the name](#about-the-name)
 * [Overview](#overview)
 * [Quick start](#quick-start)
 * [Documentation](#documentation)
@@ -20,7 +20,7 @@ A command line tool for tagging files and querying for files with those tags.
     * [Examples](#examples-2)
   * [Using multiple data files](#using-multiple-data-files)
 
-## What about the name?
+## About the name
 
 `DMS` stands for
 [Document Management System](https://en.wikipedia.org/wiki/Document_management_system),
@@ -28,14 +28,14 @@ A command line tool for tagging files and querying for files with those tags.
 
 The tool was originally meant to create a DMS from files in a directory, but 
 now it actually uses [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming))
-to specify the files to work on.
+to match the files to work on.
  
 Also, after feedback from
 [Reddit](https://www.reddit.com/r/golang/comments/13hqp3f/comment/jk7e65l)
 and [HN](https://news.ycombinator.com/item?id=35944339), it seems that it's not
 a DMS, but rather a file tagging system.
 
-Currently, I don't have a better name for it, so it remains DMSd :)
+As I have currently no better name for it, it remains DMSd :)
 
 ## Overview
 
@@ -43,7 +43,7 @@ DMSd is a command line tool for tagging files and querying for files with those
 tags.
 
 It uses [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming))
-to match the files to tag.
+to match the files to work on.
 
 It makes no changes to the files themselves, doesn't copy, move or rename them -
 all data about the tagged files is stored in a data file.
