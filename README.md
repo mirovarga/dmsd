@@ -33,7 +33,7 @@ to match the files to work on.
 Also, after feedback from
 [Reddit](https://www.reddit.com/r/golang/comments/13hqp3f/comment/jk7e65l)
 and [HN](https://news.ycombinator.com/item?id=35944339), it seems that it's not
-a DMS, but rather a file tagging system.
+quite a DMS, but rather a file tagging system.
 
 As I have currently no better name for it, it remains DMSd :)
 
