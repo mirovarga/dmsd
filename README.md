@@ -73,7 +73,7 @@ it to a directory. That's all.
 > directory. All examples assume you have `dmsd` in your `PATH`.
 
 Alternatively, if you have Go installed, run
-`go install github.com/mirovarga/dmsd`.
+`go install github.com/mirovarga/dmsd@latest`.
 
 ### Tagging files
 
